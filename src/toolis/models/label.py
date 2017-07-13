@@ -34,11 +34,19 @@ class Label(base.ToolisBase):
         describe the item associated with the label"""
     )
 
+    image_url = appier.field(
+        index = "hashed",
+        meta = "image_url",
+        description = "Image URL"
+    )
+
     @classmethod
     def validate(cls):
         return super(Label, cls).validate() + [
             appier.not_null("name"),
-            appier.not_empty("name")
+            appier.not_empty("name"),
+
+            appier.not_duplicate("code", cls._name())
         ]
 
     @classmethod
@@ -72,6 +80,7 @@ class Label(base.ToolisBase):
     def post_create(self):
         base.ToolisBase.post_create(self)
         self.set_code_s()
+        self.set_image_url_s()
 
     @appier.operation(name = "Set Code")
     def set_code_s(self, force = False):
@@ -79,3 +88,17 @@ class Label(base.ToolisBase):
         prefix = appier.conf("TOOLIS_LABEL_CODE", "%09d")
         self.code = prefix % self.id
         self.save()
+
+    @appier.operation(name = "Set Image URL")
+    def set_image_url_s(self, force = False):
+        if self.image_url and not force: return
+        self.image_url = self.view_image_url(absolute = True)
+        self.save()
+
+    @appier.link(name = "View Image", devel = True)
+    def view_image_url(self, absolute = False):
+        cls = self.__class__
+        return self.owner.url_for(
+            "label.image",
+            id = self.id
+        )
