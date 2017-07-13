@@ -8,21 +8,22 @@ from . import base
 class Label(base.ToolisBase):
 
     name = appier.field(
-        meta = "text",
         default = True,
+        index = "hashed",
+        meta = "text",
         observations = """Name of the label to be created, this should
         be as descriptive and simple as possible"""
     )
 
     attributes = appier.field(
-        meta = "text",
         default = True,
+        meta = "text",
         observations = """The multiple attributes that describe the label"""
     )
 
     code = appier.field(
-        meta = "text",
         default = True,
+        meta = "text",
         observations = """Internal code to be used in the barcode
         generation process"""
     )
@@ -38,15 +39,12 @@ class Label(base.ToolisBase):
     def validate(cls):
         return super(Label, cls).validate() + [
             appier.not_null("name"),
-            appier.not_empty("name"),
-
-            appier.not_null("code"),
-            appier.not_empty("code")
+            appier.not_empty("name")
         ]
 
     @classmethod
     def list_names(cls):
-        return ["name", "code"]
+        return ["name", "description", "code"]
 
     @classmethod
     def order_name(cls):
@@ -71,3 +69,14 @@ class Label(base.ToolisBase):
         )
         label.save()
         return label
+
+    def post_create(self):
+        base.ToolisBase.post_create(self)
+        self.set_code_s()
+
+    @appier.operation(name = "Set Code")
+    def set_reference_s(self, force = False):
+        if self.reference and not force: return
+        prefix = appier.conf("TOOLIS_LABEL_CODE", "%09d")
+        self.code = prefix % self.id
+        self.save()
