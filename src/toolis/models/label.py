@@ -59,7 +59,7 @@ class Label(base.ToolisBase):
             ("Name", "name", str),
             ("Description", "description", str),
             ("Attributes", "attributes", "longtext"),
-            ("CSV File", "file", "file"),
+            ("Image", "file", "file"),
         )
     )
     def create_s(cls, name, description, attributes, image):
