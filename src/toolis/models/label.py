@@ -65,7 +65,7 @@ class Label(base.ToolisBase):
             name = name,
             description = description,
             attributes = attributes,
-            image = image
+            image = cls.image.type(image)
         )
         label.save()
         return label
@@ -75,7 +75,7 @@ class Label(base.ToolisBase):
         self.set_code_s()
 
     @appier.operation(name = "Set Code")
-    def set_reference_s(self, force = False):
+    def set_code_s(self, force = False):
         if self.reference and not force: return
         prefix = appier.conf("TOOLIS_LABEL_CODE", "%09d")
         self.code = prefix % self.id

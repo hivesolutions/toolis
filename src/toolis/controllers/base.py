@@ -4,4 +4,9 @@
 import appier
 
 class BaseController(appier.Controller):
-    pass
+
+    @appier.route("/", "GET")
+    def index(self):
+        return self.redirect(
+            self.url_for("admin.index")
+        )

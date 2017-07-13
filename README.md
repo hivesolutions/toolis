@@ -2,6 +2,10 @@
 
 Small set of tools for operational tasks.
 
+## Configuration
+
+* `TOOLIS_LABEL_CODE` (`str`) - The template that is going to be used in the label entity's code value (defaults to `%09d`)
+
 ## License
 
 Toolis is currently licensed under the [Apache License, Version 2.0](http://www.apache.org/licenses/).
