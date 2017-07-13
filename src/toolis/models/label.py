@@ -16,13 +16,12 @@ class Label(base.ToolisBase):
     )
 
     attributes = appier.field(
-        default = True,
         meta = "text",
         observations = """The multiple attributes that describe the label"""
     )
 
     code = appier.field(
-        default = True,
+        index = "hashed",
         meta = "text",
         observations = """Internal code to be used in the barcode
         generation process"""
@@ -76,7 +75,7 @@ class Label(base.ToolisBase):
 
     @appier.operation(name = "Set Code")
     def set_code_s(self, force = False):
-        if self.reference and not force: return
+        if self.code and not force: return
         prefix = appier.conf("TOOLIS_LABEL_CODE", "%09d")
         self.code = prefix % self.id
         self.save()
