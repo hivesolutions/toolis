@@ -14,11 +14,24 @@ class Label(base.ToolisBase):
         be as descriptive and simple as possible"""
     )
 
+    attributes = appier.field(
+        meta = "text",
+        default = True,
+        observations = """The multiple attributes that describe the label"""
+    )
+
     code = appier.field(
         meta = "text",
         default = True,
         observations = """Internal code to be used in the barcode
         generation process"""
+    )
+
+    image = appier.field(
+        type = appier.File,
+        private = True,
+        observations = """The image that is going to be used to visually
+        describe the item associated with the label"""
     )
 
     @classmethod
@@ -37,4 +50,24 @@ class Label(base.ToolisBase):
 
     @classmethod
     def order_name(cls):
-        return ("s_id", -1)
+        return ("id", -1)
+
+    @classmethod
+    @appier.operation(
+        name = "Create",
+        parameters = (
+            ("Name", "name", str),
+            ("Description", "description", str),
+            ("Attributes", "attributes", "longtext"),
+            ("CSV File", "file", "file"),
+        )
+    )
+    def create_s(cls, name, description, attributes, image):
+        label = cls(
+            name = name,
+            description = description,
+            attributes = attributes,
+            image = image
+        )
+        label.save()
+        return label
