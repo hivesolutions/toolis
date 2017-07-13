@@ -1,2 +1,3 @@
-# toolis
-Small set of tools for operational tasks
+# Toolis
+
+Small set of tools for operational tasks.
