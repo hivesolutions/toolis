@@ -1,0 +1,34 @@
+{
+    "version": "0.2.0",
+    "configurations": [{
+        "name": "Python",
+        "type": "python",
+        "request": "launch",
+        "pythonPath": "python",
+        "program": "${workspaceRoot}/src/toolis/main.py",
+        "debugOptions": [
+            "WaitOnAbnormalExit",
+            "WaitOnNormalExit",
+            "RedirectOutput"
+        ],
+        "env": {
+            "PYTHONPATH": "${workspaceRoot}/src:{env.PYTHONPATH}",
+            "HELLO_ENABLED": "0"
+        }
+    }, {
+        "name": "Python3",
+        "type": "python",
+        "request": "launch",
+        "pythonPath": "python3",
+        "program": "${workspaceRoot}/src/toolis/main.py",
+        "debugOptions": [
+            "WaitOnAbnormalExit",
+            "WaitOnNormalExit",
+            "RedirectOutput"
+        ],
+        "env": {
+            "PYTHONPATH": "${workspaceRoot}/src:{env.PYTHONPATH}",
+            "HELLO_ENABLED": "0"
+        }
+    }]
+}
