@@ -27,28 +27,22 @@ class LabelController(appier.Controller):
         )
 
     @appier.route("/labels/<int:id>/small.pdf", "GET")
-    def small_pdf(self):
+    def small_pdf(self, id):
         label = toolis.Label.get(
             id = id,
             fields = ("image",),
             rules = False
         )
         return self._pdf(
-            "label.small.html.tpl",
+            "label/small.html.tpl",
+            document = dict(),
             label = label
         )
 
     def _pdf(self, path, *args, **kwargs):
         import xhtml2pdf.pisa
-
-        print("cenas1")
-
         contents = self.template(path, *args, **kwargs)
-
-        print("cenas")
-
         contents_e = contents.encode("utf-8")
-        input = appier.legacy.BytesIO(contents_e)
         output = appier.legacy.BytesIO()
         try:
             pisa_status = xhtml2pdf.pisa.CreatePDF(
