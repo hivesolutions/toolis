@@ -102,3 +102,11 @@ class Label(base.ToolisBase):
             "label.image",
             id = self.id
         )
+
+    @appier.link(name = "Small PDF", devel = True)
+    def small_pdf_url(self, absolute = False):
+        cls = self.__class__
+        return self.owner.url_for(
+            "label.small_pdf",
+            id = self.id
+        )
