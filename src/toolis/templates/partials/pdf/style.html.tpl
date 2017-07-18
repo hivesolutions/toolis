@@ -110,16 +110,37 @@
         margin-bottom: 20pt;
     }
 
-    .label-container {
-        display: inline-block;
+    .margin {
+        height: 20pt;
     }
 
-    .label.small {
-        border-collapse: collapse;
-        border: 0.01cm dotted #000000;
+    .label.small td {
+        border-top: 0.02cm dashed #000000;
+        border-bottom: 0.02cm dashed #000000;
     }
 
-    .label.small .label-name {
-        font-weight: bold;
+    .label.small td.left {
+        border-left: 0.02cm dashed #000000;
+    }
+
+    .label.small td.right {
+        border-right: 0.02cm dashed #000000;
+    }
+
+    .label.small .label-name,
+    .label.small .label-description {
+        padding-left: 6pt;
+        line-height: 10pt;
+    }
+
+    .label.small .label-name  {
+        font-family: "Open Sans Bold";
+    }
+
+    .label.small .label-image  {
+        line-height: 0pt;
+        font-size: 0pt;
+        vertical-align: middle;
+        padding-right: 6pt;
     }
 </style>

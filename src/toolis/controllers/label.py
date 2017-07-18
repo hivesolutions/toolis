@@ -58,7 +58,8 @@ class LabelController(appier.Controller):
             pisa_status = xhtml2pdf.pisa.CreatePDF(
                 contents,
                 dest = output,
-                link_callback = self.link_callback
+                link_callback = self.link_callback,
+                show_error_as_pdf = self.is_devel()
             )
             data = output.getvalue()
         finally:
