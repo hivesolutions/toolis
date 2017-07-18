@@ -109,4 +109,17 @@
     .table-header {
         margin-bottom: 20pt;
     }
+
+    .label-container {
+        display: inline-block;
+    }
+
+    .label.small {
+        border-collapse: collapse;
+        border: 0.01cm dotted #000000;
+    }
+
+    .label.small .label-name {
+        font-weight: bold;
+    }
 </style>
