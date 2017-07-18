@@ -42,7 +42,6 @@ class LabelController(appier.Controller):
     def _pdf(self, path, *args, **kwargs):
         import xhtml2pdf.pisa
         contents = self.template(path, *args, **kwargs)
-        contents_e = contents.encode("utf-8")
         output = appier.legacy.BytesIO()
         try:
             pisa_status = xhtml2pdf.pisa.CreatePDF(
