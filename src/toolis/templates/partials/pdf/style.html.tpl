@@ -131,6 +131,8 @@
     .label.small .label-description {
         padding-left: 6pt;
         line-height: 10pt;
+        font-size: 12pt;
+        line-height: 16pt;
     }
 
     .label.small .label-name  {
