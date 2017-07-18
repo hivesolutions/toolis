@@ -77,6 +77,14 @@ class Label(base.ToolisBase):
         label.save()
         return label
 
+    @classmethod
+    @appier.link(name = "Small PDF")
+    def list_small_pdf_url(cls, absolute = False):
+        return appier.get_app().url_for(
+            "label.list_small_pdf",
+            absolute = absolute
+        )
+
     def post_create(self):
         base.ToolisBase.post_create(self)
         self.set_code_s()
@@ -100,13 +108,14 @@ class Label(base.ToolisBase):
         cls = self.__class__
         return self.owner.url_for(
             "label.image",
-            id = self.id
+            id = self.id,
+            absolute = absolute
         )
 
     @appier.link(name = "Small PDF", devel = True)
     def show_small_pdf_url(self, absolute = False):
-        cls = self.__class__
         return self.owner.url_for(
             "label.show_small_pdf",
-            id = self.id
+            id = self.id,
+            absolute = absolute
         )
