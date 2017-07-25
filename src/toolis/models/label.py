@@ -86,6 +86,14 @@ class Label(base.ToolisBase):
         )
 
     @classmethod
+    @appier.link(name = "Large")
+    def list_large_url(cls, absolute = False):
+        return appier.get_app().url_for(
+            "label.list_large",
+            absolute = absolute
+        )
+
+    @classmethod
     @appier.link(name = "Small PDF")
     def list_small_pdf_url(cls, absolute = False):
         return appier.get_app().url_for(

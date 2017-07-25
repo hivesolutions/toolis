@@ -5,7 +5,7 @@
 }
 
 .label {
-    border: 2px dashed #4d4d4d;
+    border: 0.5mm dashed #4d4d4d;
     display: inline-block;
     font-family: "Oxygen", "Open Sans", sans-serif;
 }
@@ -67,7 +67,13 @@
 }
 
 .label.large {
-    font-size: 0px;
     height: 145mm;
+    margin: 0mm 1.5mm 3.0mm 1.5mm;
     width: 85mm;
+}
+
+.label.large .label-image {
+    height: 84mm;
+    object-fit: contain;
+    width: 84mm;
 }

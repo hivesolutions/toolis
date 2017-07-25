@@ -1,5 +1,5 @@
 {% extends "partials/printing.html.tpl" %}
-{% block title %}Labels{% endblock %}
+{% block title %}Labels Small{% endblock %}
 {% block content %}
     <div class="labels print" data-delay="1000">
         {% for labels in label_groups %}

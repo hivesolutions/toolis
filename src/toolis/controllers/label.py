@@ -25,6 +25,16 @@ class LabelController(appier.Controller):
             label_groups = label_groups
         )
 
+    @appier.route("/labels/large", "GET")
+    def list_large(self):
+        labels = toolis.Label.find(rules = False) * 10
+        label_groups = self.grouper(2, labels)
+        return self.template(
+            "label/large.html.tpl",
+            labels = labels,
+            label_groups = label_groups
+        )
+
     @appier.route("/labels/small.pdf", "GET")
     def list_small_pdf(self):
         labels = toolis.Label.find(rules = False)
