@@ -18,7 +18,7 @@
 }
 
 .label .label-description {
-    color: #4d4d4d;
+    color: #2d2d2d;
     text-transform: none;
 }
 
@@ -57,6 +57,7 @@
 .label.small .label-description {
     font-size: 16px;
     line-height: 24px;
+    letter-spacing: 0.5px;
 }
 
 .label.small .label-image {
