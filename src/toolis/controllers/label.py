@@ -9,11 +9,19 @@ import toolis
 
 class LabelController(appier.Controller):
 
+    @appier.route("/labels/small", "GET")
+    def list_small(self):
+        labels = toolis.Label.find(rules = False)
+        return self._pdf(
+            "label/small.html.tpl",
+            labels = labels
+        )
+
     @appier.route("/labels/small.pdf", "GET")
     def list_small_pdf(self):
         labels = toolis.Label.find(rules = False)
         return self._pdf(
-            "label/small.html.tpl",
+            "label/pdf/small.html.tpl",
             document = dict(),
             labels = labels
         )
@@ -25,7 +33,7 @@ class LabelController(appier.Controller):
             rules = False
         )
         return self._pdf(
-            "label/small.html.tpl",
+            "label/pdf/small.html.tpl",
             document = dict(),
             labels = (label,)
         )
