@@ -1,1 +1,50 @@
 @charset "utf-8";
+
+.labels {
+    text-align: left;
+}
+
+.label {
+    border: 1px dashed #000000;
+    display: inline-block;
+    margin: 0px 12px 12px 0px;
+    padding: 12px 18px 12px 18px;
+}
+
+.label.small {
+    height: 120px;
+    width: 340px;
+}
+
+.label > .left {
+    float: left;
+}
+
+.label > .right {
+    float: right;
+}
+
+.label > .right:after {
+    clear: both;
+}
+
+.label .label-name {
+    text-transform: uppercase;
+}
+
+.label .label-description {
+    text-transform: uppercase;
+}
+
+.label.small .label-name {
+    font-size: 24px;
+}
+
+.label.small .label-description {
+    font-size: 22px;
+}
+
+.label.small .label-image {
+    height: 120px;
+    width: 120px;
+}
