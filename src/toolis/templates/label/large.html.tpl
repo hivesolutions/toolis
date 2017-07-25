@@ -1,4 +1,4 @@
-{% extends "partials/simple.html.tpl" %}
+{% extends "partials/printing.html.tpl" %}
 {% block title %}Labels{% endblock %}
 {% block content %}
     <div class="labels print" data-delay="1000">

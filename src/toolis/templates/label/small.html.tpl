@@ -1,11 +1,10 @@
-{% extends "partials/simple.html.tpl" %}
+{% extends "partials/printing.html.tpl" %}
 {% block title %}Labels{% endblock %}
 {% block content %}
-    {% set count = label_groups|length %}
     <div class="labels print" data-delay="1000">
         {% for labels in label_groups %}
             <div class="page">
-                <div class="page-counter">Page {{ loop.index }} of {{ count }}</div>
+                <div class="page-counter">Page {{ loop.index }} of {{ label_groups|length }}</div>
                 {% for label in labels %}
                     {% if label %}
                         <div class="label small">
