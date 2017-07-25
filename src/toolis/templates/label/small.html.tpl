@@ -2,12 +2,10 @@
 {% block title %}Labels{% endblock %}
 {% block content %}
     {% set count = label_groups|length %}
-    {% set index = 0 %}
     <div class="labels print" data-delay="1000">
         {% for labels in label_groups %}
-            {% set index = index + 1 %}
             <div class="page">
-                <div class="page-counter">Page {{ index }} of {{ count }}</div>
+                <div class="page-counter">Page {{ loop.index }} of {{ count }}</div>
                 {% for label in labels %}
                     {% if label %}
                         <div class="label small">
