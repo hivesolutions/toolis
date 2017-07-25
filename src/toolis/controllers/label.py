@@ -12,7 +12,7 @@ class LabelController(appier.Controller):
     @appier.route("/labels/small", "GET")
     def list_small(self):
         labels = toolis.Label.find(rules = False)
-        return self._pdf(
+        return self.template(
             "label/small.html.tpl",
             labels = labels
         )
