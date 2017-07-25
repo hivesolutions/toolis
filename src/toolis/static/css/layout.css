@@ -5,7 +5,7 @@
 }
 
 .label {
-    border: 2px dashed #6d6d6d;
+    border: 2px dashed #4d4d4d;
     display: inline-block;
     font-family: "Oxygen", "Open Sans", sans-serif;
     margin: 0px 16px 16px 0px;
@@ -13,10 +13,12 @@
 }
 
 .label .label-name {
+    color: #000000;
     text-transform: uppercase;
 }
 
 .label .label-description {
+    color: #4d4d4d;
     text-transform: none;
 }
 
@@ -47,9 +49,9 @@
 }
 
 .label.small .label-name {
-    font-size: 24px;
-    line-height: 28px;
-    margin-bottom: 4px;
+    font-size: 22px;
+    line-height: 26px;
+    margin-bottom: 8px;
 }
 
 .label.small .label-description {
