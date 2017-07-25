@@ -7,8 +7,17 @@
 .label {
     border: 2px dashed #6d6d6d;
     display: inline-block;
+    font-family: "Oxygen", "Open Sans", sans-serif;
     margin: 0px 16px 16px 0px;
-    padding: 12px 18px 12px 18px;
+    padding: 14px 18px 14px 18px;
+}
+
+.label .label-name {
+    text-transform: uppercase;
+}
+
+.label .label-description {
+    text-transform: none;
 }
 
 .label.small {
@@ -17,7 +26,7 @@
     width: 352px;
 }
 
-.label > * {
+.label.small > * {
     display: inline-block;
     vertical-align: middle;
 }
@@ -28,7 +37,7 @@
     width: 212px;
 }
 
-.label > .right:after {
+.label.small > .right:after {
     clear: both;
 }
 
@@ -37,18 +46,10 @@
     width: 132px;
 }
 
-.label .label-name {
-    text-transform: uppercase;
-}
-
 .label.small .label-name {
     font-size: 24px;
     line-height: 28px;
     margin-bottom: 4px;
-}
-
-.label .label-description {
-    text-transform: none;
 }
 
 .label.small .label-description {
