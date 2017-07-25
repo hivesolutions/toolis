@@ -2,7 +2,6 @@
 
 body.printing {
     background-color: #fafafa;
-       box-sizing: border-box;
     height: 100%;
     margin: 0mm 0mm 0mm 0mm;
     padding: 0mm 0mm 0mm 0mm;
@@ -11,6 +10,14 @@ body.printing {
 
 body.printing * {
        box-sizing: border-box;
+}
+
+body.printing #header {
+       display: none;
+}
+
+body.printing #footer {
+       display: none;
 }
 
 body.printing .page {
@@ -37,9 +44,9 @@ body.printing .page-counter {
 @media print {
     html,
     body.printing {
+        background-color: initial;
         height: 297mm;
         margin: 0mm 0mm 0mm 0mm;
-        padding: 0mm 0mm 0mm 0mm;
         width: 210mm;
     }
 
