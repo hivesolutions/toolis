@@ -9,21 +9,25 @@ body.printing {
 }
 
 body.printing * {
-       box-sizing: border-box;
+    box-sizing: border-box;
+    page-break-before: left;
 }
 
 body.printing #header {
-       display: none;
+    display: none;
 }
 
 body.printing #footer {
-       display: none;
+    display: none;
 }
 
 body.printing .page {
     background: #ffffff;
-    border: 1px solid #d3d3d3;
-    border-radius: 5px 5px 5px 5px;
+    border: 1px solid #d2d2d2;
+    border-radius: 6px 6px 6px 6px;
+    box-shadow: 0px 0px 4px #cccccc;
+    -moz-box-shadow: 0px 0px 4px #cccccc;
+    -webkit-box-shadow: 0px 0px 3px #cccccc;
     margin: 10mm auto 10mm auto;
     min-height: 297mm;
     padding: 6mm 2mm 6mm 2mm;
