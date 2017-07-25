@@ -1,15 +1,69 @@
 @charset "utf-8";
 
+body.printing {
+    background-color: #fafafa;
+       box-sizing: border-box;
+    height: 100%;
+    margin: 0mm 0mm 0mm 0mm;
+    padding: 0mm 0mm 0mm 0mm;
+    width: 100%;
+}
+
+body.printing * {
+       box-sizing: border-box;
+}
+
+body.printing .page {
+    background: #ffffff;
+    border: 1px solid #d3d3d3;
+    border-radius: 5px 5px 5px 5px;
+    margin: 10mm auto 10mm auto;
+    min-height: 297mm;
+    padding: 6mm 2mm 6mm 2mm;
+    width: 210mm;
+}
+
+body.printing .page-counter {
+    font-size: 16px;
+    margin: 0mm 0px 6mm 0mm;
+}
+
+@page {
+    margin: 0mm 0mm 0mm 0mm;
+    padding: 0mm 0mm 0mm 0mm;
+    size: A4;
+}
+
+@media print {
+    html,
+    body.printing {
+        height: 297mm;
+        margin: 0mm 0mm 0mm 0mm;
+        padding: 0mm 0mm 0mm 0mm;
+        width: 210mm;
+    }
+
+    body.printing .page {
+        background: initial;
+        border: initial;
+        border-radius: initial;
+        box-shadow: initial;
+        margin: 0mm 0mm 0mm 0mm;
+        min-height: initial;
+        page-break-after: always;
+        width: initial;
+    }
+}
+
+/*------------------- page stuff ---- */
 .labels {
-    text-align: left;
+    text-align: center;
 }
 
 .label {
     border: 2px dashed #4d4d4d;
     display: inline-block;
     font-family: "Oxygen", "Open Sans", sans-serif;
-    margin: 0px 16px 16px 0px;
-    padding: 14px 18px 14px 18px;
 }
 
 .label .label-name {
@@ -24,8 +78,10 @@
 
 .label.small {
     font-size: 0px;
-    height: 132px;
-    width: 352px;
+    height: 40mm;
+    margin: 0mm 1.5mm 3.0mm 1.5mm;
+    padding: 3mm 4mm 3mm 4mm;
+    width: 98mm;
 }
 
 .label.small > * {
@@ -34,9 +90,9 @@
 }
 
 .label.small > .left {
-    height: 132px;
-    margin-right: 8px;
-    width: 212px;
+    height: 34mm;
+    margin-right: 4mm;
+    width: 52mm;
 }
 
 .label.small > .right:after {
@@ -45,7 +101,7 @@
 
 .label.small > .right {
     font-size: 0px;
-    width: 132px;
+    width: 32mm;
 }
 
 .label.small .label-name {
@@ -56,14 +112,14 @@
 
 .label.small .label-description {
     font-size: 16px;
-    line-height: 24px;
     letter-spacing: 0.5px;
+    line-height: 24px;
 }
 
 .label.small .label-image {
-    height: 132px;
+    height: 32mm;
     object-fit: contain;
-    width: 132px;
+    width: 32mm;
 }
 
 .label.large {
@@ -71,4 +127,3 @@
     height: 850px;
     width: 490px;
 }
-

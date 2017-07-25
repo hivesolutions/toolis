@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import os
+import itertools
 
 import appier
 
@@ -9,12 +10,19 @@ import toolis
 
 class LabelController(appier.Controller):
 
+    def grouper(self, n, iterable, fillvalue = None):
+        args = [iter(iterable)] * n
+        iterator = itertools.izip_longest(*args, fillvalue = fillvalue)
+        return list(iterator)
+
     @appier.route("/labels/small", "GET")
     def list_small(self):
-        labels = toolis.Label.find(rules = False)
+        labels = toolis.Label.find(rules = False) * 10
+        label_groups = self.grouper(12, labels)
         return self.template(
             "label/small.html.tpl",
-            labels = labels
+            labels = labels,
+            label_groups = label_groups
         )
 
     @appier.route("/labels/small.pdf", "GET")
