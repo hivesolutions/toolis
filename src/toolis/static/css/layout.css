@@ -32,7 +32,7 @@
     clear: both;
 }
 
-.label.small > .left {
+.label.small > .right {
     width: 120px;
 }
 
