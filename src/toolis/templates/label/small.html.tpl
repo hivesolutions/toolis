@@ -1,7 +1,7 @@
 {% extends "partials/simple.html.tpl" %}
 {% block title %}Labels{% endblock %}
 {% block content %}
-    <div class="labels">
+    <div class="labels print" data-delay="1000">
         {% for label in labels %}
             <div class="label small">
                 <div class="left">

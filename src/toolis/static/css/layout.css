@@ -5,7 +5,7 @@
 }
 
 .label {
-    border: 1px dashed #000000;
+    border: 2px dashed #6d6d6d;
     display: inline-block;
     margin: 0px 12px 12px 0px;
     padding: 12px 18px 12px 18px;
@@ -20,6 +20,10 @@
     float: left;
 }
 
+.label.small > .left {
+    width: 220px;
+}
+
 .label > .right {
     float: right;
 }
@@ -28,23 +32,31 @@
     clear: both;
 }
 
+.label.small > .left {
+    width: 120px;
+}
+
 .label .label-name {
     text-transform: uppercase;
+}
+
+.label.small .label-name {
+    font-size: 24px;
+    line-height: 28px;
+    margin-bottom: 8px;
 }
 
 .label .label-description {
     text-transform: uppercase;
 }
 
-.label.small .label-name {
-    font-size: 24px;
-}
-
 .label.small .label-description {
-    font-size: 22px;
+    font-size: 18px;
+    line-height: 22px;
 }
 
 .label.small .label-image {
     height: 120px;
+    object-fit: contain;
     width: 120px;
 }
