@@ -86,6 +86,14 @@ class Label(base.ToolisBase):
         )
 
     @classmethod
+    @appier.link(name = "50x100")
+    def list_50x100_url(cls, absolute = False):
+        return appier.get_app().url_for(
+            "label.list_50x100",
+            absolute = absolute
+        )
+
+    @classmethod
     @appier.link(name = "85x145")
     def list_85x145_url(cls, absolute = False):
         return appier.get_app().url_for(
