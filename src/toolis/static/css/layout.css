@@ -27,26 +27,27 @@
 }
 
 .label.label-vertical {
-	padding: 2mm 2mm 2mm 2mm;
+    margin: 0mm 1.5mm 3.0mm 1.5mm;
+    padding: 2mm 2mm 2mm 2mm;
 }
 
 .label.label-vertical .label-image {
-	width: 100%;
-	object-fit: contain;
+    object-fit: contain;
+    width: 100%;
 }
 
 .label.label-vertical .label-code {
-	font-size: 90%;
-	margin-top: 2mm;
+    font-size: 90%;
+    margin-top: 2mm;
 }
 
 .label.label-vertical .label-name {
-	font-size: 130%;
-	margin-bottom: 3mm;
+    font-size: 130%;
+    margin-bottom: 3mm;
 }
 
 .label.label-vertical .label-description {
-	font-size: 90%;
+    font-size: 90%;
 }
 
 .label.label-98x40 {
@@ -95,14 +96,17 @@
     width: 32mm;
 }
 
+.label.label-25x70 {
+    height: 70mm;
+    width: 25mm;
+}
+
 .label.label-50x100 {
     height: 100mm;
-    margin: 0mm 1.5mm 3.0mm 1.5mm;
     width: 50mm;
 }
 
 .label.label-85x145 {
     height: 145mm;
-    margin: 0mm 1.5mm 3.0mm 1.5mm;
     width: 85mm;
 }
