@@ -66,6 +66,18 @@
     width: 32mm;
 }
 
+.label.size-50x100 {
+    height: 100mm;
+    margin: 0mm 1.5mm 3.0mm 1.5mm;
+    width: 50mm;
+}
+
+.label.size-50x100 .label-image {
+    height: 49mm;
+    object-fit: contain;
+    width: 49mm;
+}
+
 .label.size-85x145 {
     height: 145mm;
     margin: 0mm 1.5mm 3.0mm 1.5mm;
