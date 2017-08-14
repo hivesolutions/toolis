@@ -29,7 +29,7 @@ class LabelController(appier.Controller):
     @appier.route("/labels/25x70", "GET")
     def list_25x70(self):
         labels = toolis.Label.find(rules = False) * INCREMENTER
-        label_groups = self.grouper(28, labels)
+        label_groups = self.grouper(21, labels)
         return self.template(
             "label/25x70.html.tpl",
             labels = labels,
@@ -39,7 +39,7 @@ class LabelController(appier.Controller):
     @appier.route("/labels/50x100", "GET")
     def list_50x100(self):
         labels = toolis.Label.find(rules = False) * INCREMENTER
-        label_groups = self.grouper(12, labels)
+        label_groups = self.grouper(6, labels)
         return self.template(
             "label/50x100.html.tpl",
             labels = labels,
