@@ -12,7 +12,7 @@
                                 <div class="label-description">{{ label.description }}</div>
                             </div>
                             <div class="right">
-                                <img class="label-image" src="data:image/png;base64,{{ label.image.data_b64 }}" />
+                                <img class="label-image" src="data:{{ label.image.mime }};base64,{{ label.image.data_b64 }}" />
                             </div>
                         </div>
                     {% endif %}
