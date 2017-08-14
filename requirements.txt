@@ -2,5 +2,4 @@ appier
 appier_extras
 jinja2
 pymongo
-xhtml2pdf
-html5lib==0.9999999
+pillow

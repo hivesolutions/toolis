@@ -17,7 +17,8 @@ class Label(base.ToolisBase):
 
     attributes = appier.field(
         meta = "text",
-        observations = """The multiple attributes that describe the label"""
+        observations = """The multiple attributes that describe the label
+        should describe a set of key to value associations"""
     )
 
     code = appier.field(
@@ -28,7 +29,11 @@ class Label(base.ToolisBase):
     )
 
     image = appier.field(
-        type = appier.File,
+        type = appier.image(
+            width = 500,
+            height = 500,
+            format = "jpeg"
+        ),
         private = True,
         observations = """The image that is going to be used to visually
         describe the item associated with the label"""

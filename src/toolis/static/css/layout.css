@@ -8,6 +8,7 @@
     border: 0.5mm dashed #4d4d4d;
     display: inline-block;
     font-family: "Oxygen", "Open Sans", sans-serif;
+    vertical-align: top;
 }
 
 .label .label-name {
