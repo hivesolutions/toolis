@@ -6,7 +6,7 @@
                 <div class="page-counter">Page {{ loop.index }} of {{ label_groups|length }}</div>
                 {% for label in labels %}
                     {% if label %}
-                        <div class="label label-left {% block size %}{% endblock %}">
+                        <div class="{% block label_cls %}label label-left{% endblock %}">
                             <div class="left">
                                 <div class="label-name">{{ label.name }}</div>
                                 <div class="label-description">{{ label.description }}</div>

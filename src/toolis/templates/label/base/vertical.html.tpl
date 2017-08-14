@@ -6,7 +6,7 @@
                 <div class="page-counter">Page {{ loop.index }} of {{ label_groups|length }}</div>
                 {% for label in labels %}
                     {% if label %}
-                        <div class="label label-vertical {% block size %}{% endblock %}">
+                        <div class="{% block label_cls %}label label-vertical{% endblock %}">
                             <img class="label-image" src="data:{{ label.image.mime }};base64,{{ label.image.data_b64 }}" />
                             <div class="label-code">{{ label.code }}</div>
                             <div class="label-name">{{ label.name }}</div>

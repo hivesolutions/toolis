@@ -11,6 +11,11 @@
     vertical-align: top;
 }
 
+.label .label-code {
+    color: #000000;
+    text-transform: uppercase;
+}
+
 .label .label-name {
     color: #000000;
     text-transform: uppercase;
@@ -21,7 +26,30 @@
     text-transform: none;
 }
 
-.label.size-98x40 {
+.label.label-vertical {
+	padding: 2mm 2mm 2mm 2mm;
+}
+
+.label.label-vertical .label-image {
+	width: 100%;
+	object-fit: contain;
+}
+
+.label.label-vertical .label-code {
+	font-size: 90%;
+	margin-top: 2mm;
+}
+
+.label.label-vertical .label-name {
+	font-size: 130%;
+	margin-bottom: 3mm;
+}
+
+.label.label-vertical .label-description {
+	font-size: 90%;
+}
+
+.label.label-98x40 {
     font-size: 0px;
     height: 40mm;
     margin: 0mm 1.5mm 3.0mm 1.5mm;
@@ -29,64 +57,52 @@
     width: 98mm;
 }
 
-.label.size-98x40 > * {
+.label.label-98x40 > * {
     display: inline-block;
     vertical-align: middle;
 }
 
-.label.size-98x40 > .left {
+.label.label-98x40 > .left {
     height: 34mm;
     margin-right: 4mm;
     width: 52mm;
 }
 
-.label.size-98x40 > .right:after {
+.label.label-98x40 > .right:after {
     clear: both;
 }
 
-.label.size-98x40 > .right {
+.label.label-98x40 > .right {
     font-size: 0px;
     width: 32mm;
 }
 
-.label.size-98x40 .label-name {
+.label.label-98x40 .label-name {
     font-size: 22px;
     line-height: 26px;
     margin-bottom: 8px;
 }
 
-.label.size-98x40 .label-description {
+.label.label-98x40 .label-description {
     font-size: 16px;
     letter-spacing: 0.5px;
     line-height: 24px;
 }
 
-.label.size-98x40 .label-image {
+.label.label-98x40 .label-image {
     height: 32mm;
     object-fit: contain;
     width: 32mm;
 }
 
-.label.size-50x100 {
+.label.label-50x100 {
     height: 100mm;
     margin: 0mm 1.5mm 3.0mm 1.5mm;
     width: 50mm;
 }
 
-.label.size-50x100 .label-image {
-    height: 49mm;
-    object-fit: contain;
-    width: 49mm;
-}
-
-.label.size-85x145 {
+.label.label-85x145 {
     height: 145mm;
     margin: 0mm 1.5mm 3.0mm 1.5mm;
     width: 85mm;
-}
-
-.label.size-85x145 .label-image {
-    height: 84mm;
-    object-fit: contain;
-    width: 84mm;
 }
