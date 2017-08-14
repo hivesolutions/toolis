@@ -1,5 +1,5 @@
 {% extends "partials/printing.html.tpl" %}
-{% block title %}Labels Large{% endblock %}
+{% block title %}Labels 85x145{% endblock %}
 {% block content %}
     <div class="labels print" data-delay="1000">
         {% for labels in label_groups %}
@@ -7,7 +7,7 @@
                 <div class="page-counter">Page {{ loop.index }} of {{ label_groups|length }}</div>
                 {% for label in labels %}
                     {% if label %}
-                        <div class="label large">
+                        <div class="label size-85x145">
                             <img class="label-image" src="data:image/png;base64,{{ label.image.data_b64 }}" />
                             <div class="label-name">{{ label.name }}</div>
                             <div class="label-description">{{ label.description }}</div>

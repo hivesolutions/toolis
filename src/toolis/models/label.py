@@ -86,18 +86,10 @@ class Label(base.ToolisBase):
         )
 
     @classmethod
-    @appier.link(name = "Large")
-    def list_large_url(cls, absolute = False):
+    @appier.link(name = "85x145")
+    def list_85x145_url(cls, absolute = False):
         return appier.get_app().url_for(
-            "label.list_large",
-            absolute = absolute
-        )
-
-    @classmethod
-    @appier.link(name = "Small PDF")
-    def list_small_pdf_url(cls, absolute = False):
-        return appier.get_app().url_for(
-            "label.list_small_pdf",
+            "label.list_85x145",
             absolute = absolute
         )
 
@@ -124,14 +116,6 @@ class Label(base.ToolisBase):
         cls = self.__class__
         return self.owner.url_for(
             "label.image",
-            id = self.id,
-            absolute = absolute
-        )
-
-    @appier.link(name = "Small PDF", devel = True)
-    def show_small_pdf_url(self, absolute = False):
-        return self.owner.url_for(
-            "label.show_small_pdf",
             id = self.id,
             absolute = absolute
         )
