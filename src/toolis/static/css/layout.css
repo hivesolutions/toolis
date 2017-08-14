@@ -8,7 +8,9 @@
     border: 0.5mm dashed #4d4d4d;
     display: inline-block;
     font-family: "Oxygen", "Open Sans", sans-serif;
+    overflow: hidden;
     vertical-align: top;
+    word-break: break-all;
 }
 
 .label .label-code {
