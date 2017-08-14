@@ -8,6 +8,7 @@
                     {% if label %}
                         <div class="label label-vertical {% block size %}{% endblock %}">
                             <img class="label-image" src="data:image/png;base64,{{ label.image.data_b64 }}" />
+                            <div class="label-code">{{ label.code }}</div>
                             <div class="label-name">{{ label.name }}</div>
                             <div class="label-description">{{ label.description }}</div>
                         </div>
