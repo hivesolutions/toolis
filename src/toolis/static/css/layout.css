@@ -20,7 +20,7 @@
     text-transform: none;
 }
 
-.label.small {
+.label.size-98x40 {
     font-size: 0px;
     height: 40mm;
     margin: 0mm 1.5mm 3.0mm 1.5mm;
@@ -28,39 +28,39 @@
     width: 98mm;
 }
 
-.label.small > * {
+.label.size-98x40 > * {
     display: inline-block;
     vertical-align: middle;
 }
 
-.label.small > .left {
+.label.size-98x40 > .left {
     height: 34mm;
     margin-right: 4mm;
     width: 52mm;
 }
 
-.label.small > .right:after {
+.label.size-98x40 > .right:after {
     clear: both;
 }
 
-.label.small > .right {
+.label.size-98x40 > .right {
     font-size: 0px;
     width: 32mm;
 }
 
-.label.small .label-name {
+.label.size-98x40 .label-name {
     font-size: 22px;
     line-height: 26px;
     margin-bottom: 8px;
 }
 
-.label.small .label-description {
+.label.size-98x40 .label-description {
     font-size: 16px;
     letter-spacing: 0.5px;
     line-height: 24px;
 }
 
-.label.small .label-image {
+.label.size-98x40 .label-image {
     height: 32mm;
     object-fit: contain;
     width: 32mm;

@@ -78,10 +78,10 @@ class Label(base.ToolisBase):
         return label
 
     @classmethod
-    @appier.link(name = "Small")
-    def list_small_url(cls, absolute = False):
+    @appier.link(name = "98x40")
+    def list_98x40_url(cls, absolute = False):
         return appier.get_app().url_for(
-            "label.list_small",
+            "label.list_98x40",
             absolute = absolute
         )
 

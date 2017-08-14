@@ -15,12 +15,12 @@ class LabelController(appier.Controller):
         iterator = itertools.izip_longest(*args, fillvalue = fillvalue)
         return list(iterator)
 
-    @appier.route("/labels/small", "GET")
-    def list_small(self):
+    @appier.route("/labels/98x40", "GET")
+    def list_98x40(self):
         labels = toolis.Label.find(rules = False) * 10
         label_groups = self.grouper(12, labels)
         return self.template(
-            "label/small.html.tpl",
+            "label/98x40.html.tpl",
             labels = labels,
             label_groups = label_groups
         )
