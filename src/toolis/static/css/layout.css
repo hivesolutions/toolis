@@ -28,6 +28,17 @@
     text-transform: none;
 }
 
+.label.label-left,
+.label.label-right {
+    font-size: 0px;
+}
+
+.label.label-left > *,
+.label.label-right > * {
+    display: inline-block;
+    vertical-align: middle;
+}
+
 .label.label-vertical {
     margin: 0mm 1.5mm 3.0mm 1.5mm;
     padding: 2mm 2mm 2mm 2mm;
@@ -53,16 +64,10 @@
 }
 
 .label.label-98x40 {
-    font-size: 0px;
     height: 40mm;
     margin: 0mm 1.5mm 3.0mm 1.5mm;
     padding: 3mm 4mm 3mm 4mm;
     width: 98mm;
-}
-
-.label.label-98x40 > * {
-    display: inline-block;
-    vertical-align: middle;
 }
 
 .label.label-98x40 > .left {

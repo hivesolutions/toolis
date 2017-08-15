@@ -83,7 +83,7 @@ class Label(base.ToolisBase):
         return label
 
     @classmethod
-    @appier.link(name = "98x40")
+    @appier.link(name = "Left 98x40")
     def list_98x40_url(cls, absolute = False):
         return appier.get_app().url_for(
             "label.list_98x40",
@@ -91,7 +91,7 @@ class Label(base.ToolisBase):
         )
 
     @classmethod
-    @appier.link(name = "25x70")
+    @appier.link(name = "Vertical 25x70")
     def list_25x70_url(cls, absolute = False):
         return appier.get_app().url_for(
             "label.list_25x70",
@@ -99,7 +99,7 @@ class Label(base.ToolisBase):
         )
 
     @classmethod
-    @appier.link(name = "50x100")
+    @appier.link(name = "Vertical 50x100")
     def list_50x100_url(cls, absolute = False):
         return appier.get_app().url_for(
             "label.list_50x100",
@@ -107,7 +107,7 @@ class Label(base.ToolisBase):
         )
 
     @classmethod
-    @appier.link(name = "85x145")
+    @appier.link(name = "Vertical 85x145")
     def list_85x145_url(cls, absolute = False):
         return appier.get_app().url_for(
             "label.list_85x145",
