@@ -10,7 +10,6 @@
     font-family: "Oxygen", "Open Sans", sans-serif;
     overflow: hidden;
     vertical-align: top;
-    word-break: break-all;
 }
 
 .label .label-code {
@@ -106,6 +105,7 @@
 .label.label-25x70 {
     height: 70mm;
     width: 25mm;
+    font-size: 11px;
 }
 
 .label.label-50x100 {
