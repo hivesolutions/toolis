@@ -8,8 +8,8 @@
                     {% if label %}
                         <div class="{% block label_cls %}label label-left{% endblock %}">
                             <div class="left">
+                                <div class="label-code">{{ label.code }}</div>
                                 <div class="label-name">{{ label.name }}</div>
-                                <div class="label-description">{{ label.description }}</div>
                             </div>
                             <div class="right">
                                 <img class="label-image" src="data:{{ label.image.mime }};base64,{{ label.image.data_b64 }}" />
