@@ -18,7 +18,7 @@ class LabelController(appier.Controller):
 
     @appier.route("/labels/98x40", "GET")
     def list_98x40(self):
-        labels = toolis.Label.find(rules = False) * INCREMENTER
+        labels = self._labels(rules = False)
         label_groups = self.grouper(12, labels)
         return self.template(
             "label/98x40.html.tpl",
@@ -28,7 +28,7 @@ class LabelController(appier.Controller):
 
     @appier.route("/labels/25x70", "GET")
     def list_25x70(self):
-        labels = toolis.Label.find(rules = False) * INCREMENTER
+        labels = self._labels(rules = False)
         label_groups = self.grouper(21, labels)
         return self.template(
             "label/25x70.html.tpl",
@@ -38,7 +38,7 @@ class LabelController(appier.Controller):
 
     @appier.route("/labels/50x100", "GET")
     def list_50x100(self):
-        labels = toolis.Label.find(rules = False) * INCREMENTER
+        labels = self._labels(rules = False)
         label_groups = self.grouper(6, labels)
         return self.template(
             "label/50x100.html.tpl",
@@ -48,7 +48,7 @@ class LabelController(appier.Controller):
 
     @appier.route("/labels/85x145", "GET")
     def list_85x145(self):
-        labels = toolis.Label.find(rules = False) * INCREMENTER
+        labels = self._labels(rules = False)
         label_groups = self.grouper(2, labels)
         return self.template(
             "label/85x145.html.tpl",
@@ -74,3 +74,9 @@ class LabelController(appier.Controller):
             etag = image.etag,
             cache = True
         )
+
+    def _labels(self, *args, **kwargs):
+        context = self.field("context", [], cast = list)
+        if not context: return toolis.Label.find(*args, **kwargs)
+        ids = [self.get_adapter().object_id(_id) for _id in context if _id]
+        return toolis.Label.find(_id = {"$in" : ids}, *args, **kwargs)
