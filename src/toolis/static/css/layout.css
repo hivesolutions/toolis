@@ -179,6 +179,24 @@
     width: 45mm;
 }
 
+.label.label-145x85 {
+    height: 85mm;
+    width: 145mm;
+}
+
+.label.label-145x85 > * {
+    font-size: 15px;
+}
+
+.label.label-145x85 > .left {
+    margin-right: 3mm;
+    width: 78mm;
+}
+
+.label.label-145x85 > .right {
+    width: 55mm;
+}
+
 .label.label-25x70 {
     font-size: 11px;
     height: 70mm;
