@@ -55,20 +55,17 @@
 
 .label.label-left > .left,
 .label.label-right > .right {
-    margin-right: 4%;
     vertical-align: top;
-    width: 58%;
 }
 
 .label.label-left > .right,
 .label.label-right > .left {
-    width: 38%;
     font-size: 0px;
 }
 
 .label.label-left .label-code {
     font-size: 160%;
-    margin-bottom: 1.5mm;
+    margin-bottom: 1mm;
 }
 
 .label.label-left .label-name {
@@ -102,17 +99,35 @@
 
 .label.label-30x12 {
     height: 12mm;
+    padding: 1.5mm 1.5mm 1.5mm 1.5mm;
     width: 30mm;
-    padding: 1.5mm 2mm 1.5mm 2mm;
 }
 
 .label.label-30x12 > * {
-	font-size: 4px;
+    font-size: 5px;
+}
+
+.label.label-30x12 > .left {
+    margin-right: 1mm;
+    width: 17mm;
+}
+
+.label.label-30x12 > .right {
+    width: 8mm;
 }
 
 .label.label-98x40 {
     height: 40mm;
     width: 98mm;
+}
+
+.label.label-98x40 > .left {
+    margin-right: 4mm;
+    width: 52mm;
+}
+
+.label.label-98x40 > .right {
+    width: 33mm;
 }
 
 .label.label-25x70 {
