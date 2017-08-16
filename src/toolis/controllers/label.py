@@ -12,8 +12,11 @@ INCREMENTER = 10
 class LabelController(appier.Controller):
 
     def grouper(self, n, iterable, fillvalue = None):
+        has_iterator = hasattr(itertools, "izip_longest")
+        if has_iterator: zip_longest = itertools.izip_longest
+        else: zip_longest = itertools.zip_longest
         args = [iter(iterable)] * n
-        iterator = itertools.izip_longest(*args, fillvalue = fillvalue)
+        iterator = zip_longest(*args, fillvalue = fillvalue)
         return list(iterator)
 
     @appier.route("/labels/98x40", "GET")
