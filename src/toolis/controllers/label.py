@@ -13,8 +13,8 @@ class LabelController(appier.Controller):
 
     def grouper(self, n, iterable, fillvalue = None):
         has_iterator = hasattr(itertools, "izip_longest")
-        if has_iterator: zip_longest = itertools.izip_longest
-        else: zip_longest = itertools.zip_longest
+        if has_iterator: zip_longest = itertools.izip_longest #@UndefinedVariable
+        else: zip_longest = itertools.zip_longest #@UndefinedVariable
         args = [iter(iterable)] * n
         iterator = zip_longest(*args, fillvalue = fillvalue)
         return list(iterator)
@@ -41,10 +41,20 @@ class LabelController(appier.Controller):
 
     @appier.route("/labels/70x25", "GET")
     def list_70x25(self):
-        labels = self._labels(rules = False)
-        label_groups = self.grouper(12, labels)
+        labels = self._labels(rules = False) * 100
+        label_groups = self.grouper(18, labels)
         return self.template(
             "label/right/70x25.html.tpl",
+            labels = labels,
+            label_groups = label_groups
+        )
+
+    @appier.route("/labels/100x50", "GET")
+    def list_100x50(self):
+        labels = self._labels(rules = False)
+        label_groups = self.grouper(5, labels)
+        return self.template(
+            "label/right/100x50.html.tpl",
             labels = labels,
             label_groups = label_groups
         )
