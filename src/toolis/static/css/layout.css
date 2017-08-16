@@ -30,11 +30,15 @@
 .label.label-left,
 .label.label-right {
     font-size: 0px;
+    margin: 0mm 1.5mm 3.0mm 1.5mm;
+    padding: 3mm 4mm 3mm 4mm;
 }
 
 .label.label-left > *,
 .label.label-right > * {
     display: inline-block;
+    font-size: 14px;
+    overflow: hidden;
     vertical-align: middle;
 }
 
@@ -46,6 +50,21 @@
 .label.label-left .label-image,
 .label.label-right .label-image {
     object-fit: contain;
+    width: 100%;
+}
+
+.label.label-left > .left {
+    vertical-align: top;
+}
+
+.label.label-left .label-code {
+    font-size: 160%;
+    margin-bottom: 1.5mm;
+}
+
+.label.label-left .label-name {
+    font-size: 110%;
+    letter-spacing: 0.5px;
 }
 
 .label.label-vertical {
@@ -74,35 +93,15 @@
 
 .label.label-98x40 {
     height: 40mm;
-    margin: 0mm 1.5mm 3.0mm 1.5mm;
-    padding: 3mm 4mm 3mm 4mm;
     width: 98mm;
 }
 
 .label.label-98x40 > .left {
-    height: 34mm;
     margin-right: 4mm;
     width: 52mm;
 }
 
 .label.label-98x40 > .right {
-    width: 32mm;
-}
-
-.label.label-98x40 .label-code {
-    font-size: 22px;
-    line-height: 26px;
-    margin-bottom: 8px;
-}
-
-.label.label-98x40 .label-name {
-    font-size: 16px;
-    letter-spacing: 0.5px;
-    line-height: 24px;
-}
-
-.label.label-98x40 .label-image {
-    height: 32mm;
     width: 32mm;
 }
 
