@@ -38,6 +38,16 @@
     vertical-align: middle;
 }
 
+.label.label-left > .right:after,
+.label.label-right > .right:after {
+    clear: both;
+}
+
+.label.label-left .label-image,
+.label.label-right .label-image {
+    object-fit: contain;
+}
+
 .label.label-vertical {
     margin: 0mm 1.5mm 3.0mm 1.5mm;
     padding: 2mm 2mm 2mm 2mm;
@@ -75,12 +85,7 @@
     width: 52mm;
 }
 
-.label.label-98x40 > .right:after {
-    clear: both;
-}
-
 .label.label-98x40 > .right {
-    font-size: 0px;
     width: 32mm;
 }
 
@@ -98,7 +103,6 @@
 
 .label.label-98x40 .label-image {
     height: 32mm;
-    object-fit: contain;
     width: 32mm;
 }
 
