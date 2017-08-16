@@ -123,6 +123,10 @@ class Label(base.ToolisBase):
         self.set_code_s()
         self.set_image_url_s()
 
+    def post_update(self):
+        base.ToolisBase.post_update(self)
+        self.set_image_url_s()
+
     @appier.operation(name = "Set Code")
     def set_code_s(self, force = False):
         if self.code and not force: return
