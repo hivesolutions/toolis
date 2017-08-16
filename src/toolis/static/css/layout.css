@@ -53,8 +53,17 @@
     width: 100%;
 }
 
-.label.label-left > .left {
+.label.label-left > .left,
+.label.label-right > .right {
+    margin-right: 4%;
     vertical-align: top;
+    width: 58%;
+}
+
+.label.label-left > .right,
+.label.label-right > .left {
+    width: 38%;
+    font-size: 0px;
 }
 
 .label.label-left .label-code {
@@ -91,18 +100,19 @@
     font-size: 90%;
 }
 
+.label.label-30x12 {
+    height: 12mm;
+    width: 30mm;
+    padding: 1.5mm 2mm 1.5mm 2mm;
+}
+
+.label.label-30x12 > * {
+	font-size: 4px;
+}
+
 .label.label-98x40 {
     height: 40mm;
     width: 98mm;
-}
-
-.label.label-98x40 > .left {
-    margin-right: 4mm;
-    width: 52mm;
-}
-
-.label.label-98x40 > .right {
-    width: 32mm;
 }
 
 .label.label-25x70 {
