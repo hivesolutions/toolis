@@ -19,12 +19,22 @@ class LabelController(appier.Controller):
         iterator = zip_longest(*args, fillvalue = fillvalue)
         return list(iterator)
 
+    @appier.route("/labels/30x12", "GET")
+    def list_30x12(self):
+        labels = self._labels(rules = False)
+        label_groups = self.grouper(12, labels)
+        return self.template(
+            "label/left/30x12.html.tpl",
+            labels = labels,
+            label_groups = label_groups
+        )
+
     @appier.route("/labels/98x40", "GET")
     def list_98x40(self):
         labels = self._labels(rules = False)
         label_groups = self.grouper(12, labels)
         return self.template(
-            "label/98x40.html.tpl",
+            "label/left/98x40.html.tpl",
             labels = labels,
             label_groups = label_groups
         )
@@ -34,7 +44,7 @@ class LabelController(appier.Controller):
         labels = self._labels(rules = False)
         label_groups = self.grouper(21, labels)
         return self.template(
-            "label/25x70.html.tpl",
+            "label/vertical/25x70.html.tpl",
             labels = labels,
             label_groups = label_groups
         )
@@ -44,7 +54,7 @@ class LabelController(appier.Controller):
         labels = self._labels(rules = False)
         label_groups = self.grouper(6, labels)
         return self.template(
-            "label/50x100.html.tpl",
+            "label/vertical/50x100.html.tpl",
             labels = labels,
             label_groups = label_groups
         )
@@ -54,7 +64,7 @@ class LabelController(appier.Controller):
         labels = self._labels(rules = False)
         label_groups = self.grouper(2, labels)
         return self.template(
-            "label/85x145.html.tpl",
+            "label/vertical/85x145.html.tpl",
             labels = labels,
             label_groups = label_groups
         )
