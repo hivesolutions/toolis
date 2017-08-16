@@ -73,6 +73,19 @@
     letter-spacing: 0.5px;
 }
 
+.label.label-right .label-code {
+    font-size: 110%;
+}
+
+.label.label-right .label-name {
+    font-size: 120%;
+    margin-bottom: 1.5mm;
+}
+
+.label.label-right .label-description {
+    font-size: 100%;
+}
+
 .label.label-vertical {
     margin: 0mm 1.5mm 3.0mm 1.5mm;
     padding: 2mm 2mm 2mm 2mm;
@@ -128,6 +141,24 @@
 
 .label.label-98x40 > .right {
     width: 33mm;
+}
+
+.label.label-70x25 {
+    height: 25mm;
+    width: 70mm;
+}
+
+.label.label-70x25 > * {
+    font-size: 10px;
+}
+
+.label.label-70x25 > .left {
+    margin-right: 3mm;
+    width: 18mm;
+}
+
+.label.label-70x25 > .right {
+    width: 40mm;
 }
 
 .label.label-25x70 {

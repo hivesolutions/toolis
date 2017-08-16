@@ -11,6 +11,7 @@
                                 <img class="label-image" src="data:{{ label.image.mime }};base64,{{ label.image.data_b64 }}" />
                             </div>
                             <div class="right">
+                                <div class="label-code">{{ label.code }}</div>
                                 <div class="label-name">{{ label.name }}</div>
                                 <div class="label-description">{{ label.description }}</div>
                             </div>
