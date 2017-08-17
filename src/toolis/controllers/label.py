@@ -41,7 +41,7 @@ class LabelController(appier.Controller):
 
     @appier.route("/labels/70x25", "GET")
     def list_70x25(self):
-        labels = self._labels(rules = False) * 100
+        labels = self._labels(rules = False)
         label_groups = self.grouper(18, labels)
         return self.template(
             "label/right/70x25.html.tpl",
