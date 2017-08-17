@@ -31,7 +31,7 @@
 .label.label-right {
     font-size: 0px;
     margin: 0mm 1.5mm 3.0mm 1.5mm;
-    padding: 3mm 4mm 3mm 4mm;
+    padding: 3mm 3mm 3mm 3mm;
 }
 
 .label.label-left > *,
@@ -87,7 +87,7 @@
 
 .label.label-vertical {
     margin: 0mm 1.5mm 3.0mm 1.5mm;
-    padding: 2mm 2mm 2mm 2mm;
+    padding: 3mm 3mm 3mm 3mm;
 }
 
 .label.label-vertical .label-image {
@@ -135,7 +135,7 @@
 
 .label.label-98x40 > .left {
     margin-right: 4mm;
-    width: 52mm;
+    width: 54mm;
 }
 
 .label.label-98x40 > .right {
@@ -157,7 +157,7 @@
 }
 
 .label.label-70x25 > .right {
-    width: 40mm;
+    width: 42mm;
 }
 
 .label.label-100x50 {
@@ -175,7 +175,7 @@
 }
 
 .label.label-100x50 > .right {
-    width: 45mm;
+    width: 47mm;
 }
 
 .label.label-145x85 {
@@ -193,7 +193,7 @@
 }
 
 .label.label-145x85 > .right {
-    width: 55mm;
+    width: 57mm;
 }
 
 .label.label-25x70 {
