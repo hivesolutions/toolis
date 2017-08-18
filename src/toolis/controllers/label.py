@@ -47,10 +47,20 @@ class LabelController(appier.Controller):
             label_groups = label_groups
         )
 
+    @appier.route("/labels/55x45", "GET")
+    def list_55x45(self):
+        labels = self._labels(rules = False)
+        label_groups = self.grouper(15, labels)
+        return self.template(
+            "label/right/55x45.html.tpl",
+            labels = labels,
+            label_groups = label_groups
+        )
+
     @appier.route("/labels/90x57", "GET")
     def list_90x57(self):
         labels = self._labels(rules = False)
-        label_groups = self.grouper(18, labels)
+        label_groups = self.grouper(8, labels)
         return self.template(
             "label/right/90x57.html.tpl",
             labels = labels,
