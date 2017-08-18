@@ -160,6 +160,24 @@
     width: 42mm;
 }
 
+.label.label-90x57 {
+    height: 57mm;
+    width: 90mm;
+}
+
+.label.label-90x57 > * {
+    font-size: 11px;
+}
+
+.label.label-90x57 > .left {
+    margin-right: 3mm;
+    width: 50mm;
+}
+
+.label.label-90x57 > .right {
+    width: 30mm;
+}
+
 .label.label-100x50 {
     height: 50mm;
     width: 100mm;

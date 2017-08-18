@@ -42,7 +42,9 @@ class Label(base.ToolisBase):
     image_url = appier.field(
         index = "hashed",
         meta = "image_url",
-        description = "Image URL"
+        description = "Image URL",
+        observations = """The URL of the image that is currently associated,
+        it should be a valid absolute value"""
     )
 
     @classmethod
@@ -105,6 +107,15 @@ class Label(base.ToolisBase):
     def list_70x25_url(cls, context = None, absolute = False):
         return appier.get_app().url_for(
             "label.list_70x25",
+            context = context,
+            absolute = absolute
+        )
+
+    @classmethod
+    @appier.link(name = "Right 90x57", context = True)
+    def list_90x57_url(cls, context = None, absolute = False):
+        return appier.get_app().url_for(
+            "label.list_90x57",
             context = context,
             absolute = absolute
         )
