@@ -7,8 +7,6 @@ import appier
 
 import toolis
 
-INCREMENTER = 10
-
 class LabelController(appier.Controller):
 
     def grouper(self, n, iterable, fillvalue = None):
