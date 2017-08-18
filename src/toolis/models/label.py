@@ -47,6 +47,14 @@ class Label(base.ToolisBase):
         it should be a valid absolute value"""
     )
 
+    category = appier.field(
+        type = appier.reference(
+            "Category",
+            name = "name"
+        ),
+        observations = """The logical category to which this label belongs"""
+    )
+
     @classmethod
     def validate(cls):
         return super(Label, cls).validate() + [
