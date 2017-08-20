@@ -34,3 +34,13 @@ class Category(base.ToolisBase):
     @classmethod
     def order_name(cls):
         return ("id", -1)
+
+    @appier.view(name = "Labels")
+    def labels_v(self, *args, **kwargs):
+        from . import label
+        kwargs["sort"] = kwargs.get("sort", [("id", -1)])
+        return dict(
+            model = label.Label,
+            entities = label.Label.find(category = self.name, *args, **kwargs),
+            page = label.Label.paginate(category = self.name, *args, **kwargs)
+        )
