@@ -39,7 +39,7 @@ class Category(base.ToolisBase):
     def labels_v(self, *args, **kwargs):
         from . import label
         kwargs["sort"] = kwargs.get("sort", [("id", -1)])
-        kwargs["category"] = self.name
+        kwargs.update(category = self.name)
         return appier.lazy_dict(
             model = label.Label,
             kwargs = kwargs,
