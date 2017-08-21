@@ -137,7 +137,4 @@ class LabelController(appier.Controller):
         )
 
     def _labels(self, *args, **kwargs):
-        context = self.field("context", [], cast = list)
-        if not context: return toolis.Label.find(*args, **kwargs)
-        ids = [self.get_adapter().object_id(_id) for _id in context if _id]
-        return toolis.Label.find(_id = {"$in" : ids}, *args, **kwargs)
+        return self.admin_part._find_context(toolis.Label, *args, **kwargs)
