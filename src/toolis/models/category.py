@@ -36,13 +36,13 @@ class Category(base.ToolisBase):
         return ("id", -1)
 
     @appier.view(name = "Labels")
-    def labels_v(self, run = True, *args, **kwargs):
+    def labels_v(self, *args, **kwargs):
         from . import label
         kwargs["sort"] = kwargs.get("sort", [("id", -1)])
         kwargs["category"] = self.name
-        if not run: return dict(model = label.Label, kwargs = kwargs)
-        return dict(
+        return appier.lazy_dict(
             model = label.Label,
-            entities = label.Label.find(*args, **kwargs),
-            page = label.Label.paginate(*args, **kwargs)
+            kwargs = kwargs,
+            entities = appier.lazy(label.Label.find(*args, **kwargs)),
+            page = appier.lazy(label.Label.paginate(*args, **kwargs))
         )
