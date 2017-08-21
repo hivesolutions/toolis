@@ -213,6 +213,21 @@ class Label(base.ToolisBase):
         self.image_url = self.view_image_url(absolute = True)
         self.save()
 
+    @appier.operation(
+        name = "Set Category",
+        parameters = (
+            (
+                "Category",
+                "category",
+                appier.reference("Category", name = "name")
+            ),
+        )
+    )
+    def set_category_s(self, category):
+        if not category: return
+        self.category = category
+        self.save()
+
     @appier.link(name = "View Image", devel = True)
     def view_image_url(self, absolute = False):
         cls = self.__class__
