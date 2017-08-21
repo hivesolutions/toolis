@@ -43,6 +43,6 @@ class Category(base.ToolisBase):
         return appier.lazy_dict(
             model = label.Label,
             kwargs = kwargs,
-            entities = appier.lazy(label.Label.find(*args, **kwargs)),
-            page = appier.lazy(label.Label.paginate(*args, **kwargs))
+            entities = appier.lazy(lambda: label.Label.find(*args, **kwargs)),
+            page = appier.lazy(lambda: label.Label.paginate(*args, **kwargs))
         )
