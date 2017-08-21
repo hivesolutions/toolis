@@ -66,7 +66,7 @@ class Label(base.ToolisBase):
 
     @classmethod
     def list_names(cls):
-        return ["name", "description", "code"]
+        return ["name", "description", "code", "category"]
 
     @classmethod
     def order_name(cls):
