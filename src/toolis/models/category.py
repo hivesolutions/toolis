@@ -38,9 +38,12 @@ class Category(base.ToolisBase):
     @appier.view(name = "Labels")
     def labels_v(self, *args, **kwargs):
         from . import label
+        execute = kwargs.pop("execute", True)
         kwargs["sort"] = kwargs.get("sort", [("id", -1)])
+        kwargs["category"] = self.name
+        if not execute: return dict(model = label.Label, kwargs = kwargs)
         return dict(
             model = label.Label,
-            entities = label.Label.find(category = self.name, *args, **kwargs),
-            page = label.Label.paginate(category = self.name, *args, **kwargs)
+            entities = label.Label.find(*args, **kwargs),
+            page = label.Label.paginate(*args, **kwargs)
         )
