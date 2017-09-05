@@ -148,6 +148,6 @@ class LabelController(appier.Controller):
         return list(iterator)
 
     def _labels(self, *args, **kwargs):
-        object = appier.get_object(alias = True, find = True)
+        object = appier.get_object(alias = True, find = True, limit = 0)
         kwargs.update(object)
         return self.admin_part._find_view(toolis.Label, *args, **kwargs)
