@@ -142,6 +142,24 @@
     width: 33mm;
 }
 
+.label.label-40x25 {
+    height: 25mm;
+    width: 40mm;
+}
+
+.label.label-40x25 > * {
+    font-size: 9px;
+}
+
+.label.label-40x25 > .left {
+    margin-right: 3mm;
+    width: 10mm;
+}
+
+.label.label-40x25 > .right {
+    width: 20mm;
+}
+
 .label.label-70x25 {
     height: 25mm;
     width: 70mm;
