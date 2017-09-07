@@ -90,7 +90,7 @@ class LabelController(appier.Controller):
     @appier.ensure(token = "admin")
     def list_25x40(self):
         labels = self._labels(rules = False)
-        label_groups = self._grouper(21, labels)
+        label_groups = self._grouper(42, labels)
         return self.template(
             "label/vertical/25x40.html.tpl",
             labels = labels,
