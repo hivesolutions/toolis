@@ -232,6 +232,16 @@
     width: 57mm;
 }
 
+.label.label-25x40 {
+    font-size: 9px;
+    height: 40mm;
+    width: 25mm;
+}
+
+.label.label-25x40 .label-description {
+    display: none;
+}
+
 .label.label-25x70 {
     font-size: 11px;
     height: 70mm;
