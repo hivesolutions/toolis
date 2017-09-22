@@ -93,7 +93,7 @@ class Label(base.ToolisBase):
         return label
 
     @classmethod
-    @appier.link(name = "Left 30x12", context = True)
+    @appier.link(name = "Left 30x12")
     def list_30x12_url(cls, view = None, context = None, absolute = False):
         return appier.get_app().url_for(
             "label.list_30x12",
@@ -103,7 +103,7 @@ class Label(base.ToolisBase):
         )
 
     @classmethod
-    @appier.link(name = "Left 98x40", context = True)
+    @appier.link(name = "Left 98x40")
     def list_98x40_url(cls, view = None, context = None, absolute = False):
         return appier.get_app().url_for(
             "label.list_98x40",
@@ -113,7 +113,7 @@ class Label(base.ToolisBase):
         )
 
     @classmethod
-    @appier.link(name = "Right 40x25", context = True)
+    @appier.link(name = "Right 40x25")
     def list_40x25_url(cls, view = None, context = None, absolute = False):
         return appier.get_app().url_for(
             "label.list_40x25",
@@ -123,7 +123,7 @@ class Label(base.ToolisBase):
         )
 
     @classmethod
-    @appier.link(name = "Right 70x25", context = True)
+    @appier.link(name = "Right 70x25")
     def list_70x25_url(cls, view = None, context = None, absolute = False):
         return appier.get_app().url_for(
             "label.list_70x25",
@@ -133,7 +133,7 @@ class Label(base.ToolisBase):
         )
 
     @classmethod
-    @appier.link(name = "Right 55x45", context = True)
+    @appier.link(name = "Right 55x45")
     def list_55x45_url(cls, view = None, context = None, absolute = False):
         return appier.get_app().url_for(
             "label.list_55x45",
@@ -143,16 +143,17 @@ class Label(base.ToolisBase):
         )
 
     @classmethod
-    @appier.link(name = "Right 90x57", context = True)
+    @appier.link(name = "Right 90x57")
     def list_90x57_url(cls, view = None, context = None, absolute = False):
         return appier.get_app().url_for(
             "label.list_90x57",
+            view = view,
             context = context,
             absolute = absolute
         )
 
     @classmethod
-    @appier.link(name = "Right 100x50", context = True)
+    @appier.link(name = "Right 100x50")
     def list_100x50_url(cls, view = None, context = None, absolute = False):
         return appier.get_app().url_for(
             "label.list_100x50",
@@ -162,7 +163,7 @@ class Label(base.ToolisBase):
         )
 
     @classmethod
-    @appier.link(name = "Right 145x85", context = True)
+    @appier.link(name = "Right 145x85")
     def list_145x85_url(cls, view = None, context = None, absolute = False):
         return appier.get_app().url_for(
             "label.list_145x85",
@@ -172,7 +173,7 @@ class Label(base.ToolisBase):
         )
 
     @classmethod
-    @appier.link(name = "Vertical 25x40", context = True)
+    @appier.link(name = "Vertical 25x40")
     def list_25x40_url(cls, view = None, context = None, absolute = False):
         return appier.get_app().url_for(
             "label.list_25x40",
@@ -182,7 +183,7 @@ class Label(base.ToolisBase):
         )
 
     @classmethod
-    @appier.link(name = "Vertical 25x70", context = True)
+    @appier.link(name = "Vertical 25x70")
     def list_25x70_url(cls, view = None, context = None, absolute = False):
         return appier.get_app().url_for(
             "label.list_25x70",
@@ -192,7 +193,7 @@ class Label(base.ToolisBase):
         )
 
     @classmethod
-    @appier.link(name = "Vertical 50x100", context = True)
+    @appier.link(name = "Vertical 50x100")
     def list_50x100_url(cls, view = None, context = None, absolute = False):
         return appier.get_app().url_for(
             "label.list_50x100",
@@ -202,7 +203,7 @@ class Label(base.ToolisBase):
         )
 
     @classmethod
-    @appier.link(name = "Vertical 85x145", context = True)
+    @appier.link(name = "Vertical 85x145")
     def list_85x145_url(cls, view = None, context = None, absolute = False):
         return appier.get_app().url_for(
             "label.list_85x145",
@@ -254,5 +255,101 @@ class Label(base.ToolisBase):
         return self.owner.url_for(
             "label.image",
             id = self.id,
+            absolute = absolute
+        )
+
+    @appier.link(name = "Left 30x12")
+    def list_30x12_s_url(self, absolute = False):
+        return self.owner.url_for(
+            "label.list_30x12",
+            context = "id:equals:%d" % self.id,
+            absolute = absolute
+        )
+
+    @appier.link(name = "Left 98x40")
+    def list_98x40_s_url(self, view = None, context = None, absolute = False):
+        return appier.get_app().url_for(
+            "label.list_98x40",
+            context = "id:equals:%d" % self.id,
+            absolute = absolute
+        )
+
+    @appier.link(name = "Right 40x25")
+    def list_40x25_s_url(self, view = None, context = None, absolute = False):
+        return appier.get_app().url_for(
+            "label.list_40x25",
+            context = "id:equals:%d" % self.id,
+            absolute = absolute
+        )
+
+    @appier.link(name = "Right 70x25")
+    def list_70x25_s_url(self, view = None, context = None, absolute = False):
+        return appier.get_app().url_for(
+            "label.list_70x25",
+            context = "id:equals:%d" % self.id,
+            absolute = absolute
+        )
+
+    @appier.link(name = "Right 55x45")
+    def list_55x45_s_url(self, view = None, context = None, absolute = False):
+        return appier.get_app().url_for(
+            "label.list_55x45",
+            context = "id:equals:%d" % self.id,
+            absolute = absolute
+        )
+
+    @appier.link(name = "Right 90x57")
+    def list_90x57_s_url(self, view = None, context = None, absolute = False):
+        return appier.get_app().url_for(
+            "label.list_90x57",
+            context = "id:equals:%d" % self.id,
+            absolute = absolute
+        )
+
+    @appier.link(name = "Right 100x50")
+    def list_100x50_s_url(self, view = None, context = None, absolute = False):
+        return appier.get_app().url_for(
+            "label.list_100x50",
+            context = "id:equals:%d" % self.id,
+            absolute = absolute
+        )
+
+    @appier.link(name = "Right 145x85")
+    def list_145x85_s_url(self, view = None, context = None, absolute = False):
+        return appier.get_app().url_for(
+            "label.list_145x85",
+            context = "id:equals:%d" % self.id,
+            absolute = absolute
+        )
+
+    @appier.link(name = "Vertical 25x40")
+    def list_25x40_s_url(self, view = None, context = None, absolute = False):
+        return appier.get_app().url_for(
+            "label.list_25x40",
+            context = "id:equals:%d" % self.id,
+            absolute = absolute
+        )
+
+    @appier.link(name = "Vertical 25x70")
+    def list_25x70_s_url(self, view = None, context = None, absolute = False):
+        return appier.get_app().url_for(
+            "label.list_25x70",
+            context = "id:equals:%d" % self.id,
+            absolute = absolute
+        )
+
+    @appier.link(name = "Vertical 50x100")
+    def list_50x100_s_url(self, view = None, context = None, absolute = False):
+        return appier.get_app().url_for(
+            "label.list_50x100",
+            context = "id:equals:%d" % self.id,
+            absolute = absolute
+        )
+
+    @appier.link(name = "Vertical 85x145")
+    def list_85x145_s_url(self, view = None, context = None, absolute = False):
+        return appier.get_app().url_for(
+            "label.list_85x145",
+            context = "id:equals:%d" % self.id,
             absolute = absolute
         )
