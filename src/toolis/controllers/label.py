@@ -151,8 +151,7 @@ class LabelController(appier.Controller):
         )
         image = label.image
         if not image: raise appier.NotFoundError(
-            message = "File not found for label '%d'" % id,
-            code = 404
+            message = "File not found for label '%d'" % id
         )
         return self.send_file(
             image.data,
