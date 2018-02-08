@@ -235,6 +235,15 @@ class Label(base.ToolisBase):
         self.save()
 
     @appier.operation(
+        name = "Set Name",
+        parameters = (("Name", "name", "str"),)
+    )
+    def set_name_s(self, name):
+        if not name: return
+        self.name = name
+        self.save()
+
+    @appier.operation(
         name = "Set Category",
         parameters = (
             (
