@@ -236,7 +236,7 @@ class Label(base.ToolisBase):
 
     @appier.operation(
         name = "Set Name",
-        parameters = (("Name", "name", "str"),)
+        parameters = (("Name", "name", str),)
     )
     def set_name_s(self, name):
         if not name: return
