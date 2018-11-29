@@ -258,6 +258,19 @@ class Label(base.ToolisBase):
         self.category = category
         self.save()
 
+    @appier.operation(name = "Duplicate", factory = True)
+    def duplicate_s(self):
+        cls = self.__class__
+        instance = self.reload(rules = False)
+        label = cls(
+            name = instance.name,
+            attributes = instance.attributes,
+            image = instance.image,
+            category = instance.category
+        )
+        label.save()
+        return label
+
     @appier.link(name = "View Image", devel = True)
     def view_image_url(self, absolute = False):
         cls = self.__class__
