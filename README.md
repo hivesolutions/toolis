@@ -14,7 +14,7 @@ Toolis is currently licensed under the [Apache License, Version 2.0](http://www.
 
 ## Build Automation
 
-[![Build Status](https://travis-ci.com/hivesolutions/toolis.svg?branch=master)](https://travis-ci.com/hivesolutions/toolis)
+[![Build Status](https://app.travis-ci.com/hivesolutions/toolis.svg?branch=master)](https://travis-ci.com/github/hivesolutions/toolis)
 [![Coverage Status](https://coveralls.io/repos/hivesolutions/toolis/badge.svg?branch=master)](https://coveralls.io/r/hivesolutions/toolis?branch=master)
 [![PyPi Status](https://img.shields.io/pypi/v/toolis.svg)](https://pypi.python.org/pypi/toolis)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://www.apache.org/licenses/)
